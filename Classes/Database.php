@@ -32,12 +32,50 @@ class Database
         )');
     }
 
-    function initData()
+    function insertProduct($title, $price, $stock, $categoryName, $description, $imageUrl, $popularityFactor)
     {
+        $sql = "INSERT INTO Products (title, price, stock, categoryName, description, imageUrl, popularityFactor) VALUES (:title, :price, :stock, :categoryName, :description, :imageUrl, :popularityFactor) ";
+        $query = $this->pdo->prepare($sql);
+        $query->execute(["title" => $title, "price" => $price, "stock" => $stock, "categoryName" => $categoryName, "description" => $description, "imageUrl" => $imageUrl, "popularityFactor" => $popularityFactor]);
     }
 
-    function addProductsIfNotExists()
+    function initData()
     {
+        $sql = "SELECT COUNT(*) FROM Products";
+        $res = $this->pdo->query($sql);
+        $count = $res->fetchColumn();
+
+        $this->addProductIfNotExists("", 0, 0, "", "", "", 0);
+    }
+
+    function addProductsIfNotExists($title, $price, $stock, $categoryName, $description, $imageUrl, $popularityFactor)
+    {
+        $query = $this->pdo->prepare("SELECT * FROM Products WHERE title = :title");
+        $query->execute(['title' => $title]);
+        if ($query->rowCount() == 0) {
+            $this->insertProduct($title, $price, $stock, $categoryName, $description, $imageUrl, $popularityFactor);
+        }
+    }
+
+    function getAllProducts($sortCol, $sortOrder)
+    {
+        if (!in_array($sortCol, ["title", "price"])) {
+            $sortCol = "title";
+        }
+        if (!in_array($sortOrder, ["asc", "desc"])) {
+            $sortOrder = "asc";
+        }
+
+        $query = $this->pdo->query("SELECT * FROM Products ORDER BY $sortCol $sortOrder");
+        return $query->fetchAll(PDO::FETCH_CLASS, 'Products');
+    }
+
+    function getProducts($id)
+    {
+        $query = $this->pdo->prepare("SELECT * FROM Products WHERE id = :id");
+        $query->execute(["id" => $id]);
+        $query->setFetchMode(PDO::FETCH_CLASS, 'Products');
+        return $query->fetch();
     }
 
     function getCategoryProducts($catName)
@@ -50,6 +88,12 @@ class Database
         $query = $this->pdo->prepare("SELECT * FROM Products WHERE categoryName = :categoryName");
         $query->execute(["categoryName" => $catName]);
         return $query->fetchAll(PDO::FETCH_CLASS, "Products");
+    }
+
+    function getPopularProducts()
+    {
+        $query = $this->pdo->query("SELECT * FROM Products WHERE popularityFactor BETWEEN 1 AND 10 ORDER BY popularityFactor ASC LIMIT 10");
+        return $query->fetchAll(PDO::FETCH_CLASS, 'Products');
     }
 }
 
