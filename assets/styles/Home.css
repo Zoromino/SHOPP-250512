@@ -8,14 +8,12 @@ body {
   height: 100%;
 }
 
+/* #region Navbar */
 .navbar {
   display: flex;
   width: 100%;
 
   .logo-container {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     position: absolute;
     left: 50%;
     top: 1.2rem;
@@ -37,6 +35,14 @@ body {
     gap: 1rem;
     align-self: center;
     margin-left: -4rem;
+
+    a {
+      color: black;
+
+      &:hover {
+        color: gray;
+      }
+    }
   }
 
   .nav-container {
@@ -167,3 +173,4 @@ body {
 
   }
 }
+/* #endregion Navbar */

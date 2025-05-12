@@ -49,14 +49,14 @@ function Navigation()
         </div>
 
         <div class="logo-container">
-            <div class="logo"><a href="#!">HELLO</a></div>
+            <div class="logo"><a href="#!"></a>CoolGoods</div>
         </div>
         <div class="icon-container">
             <div class="user-icon">
-                <i class="fa-solid fa-user-secret"></i>
+                <a href="#!"><i class="fa-solid fa-user-secret"></i></a>
             </div>
             <div class="cart-icon">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <a href="#!"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
         </div>
 
