@@ -12,6 +12,8 @@ body {
 .navbar {
   display: flex;
   width: 100%;
+  border-bottom: 3px solid black;
+
 
   .logo-container {
     position: absolute;
@@ -69,7 +71,7 @@ body {
       .drop-menu {
         display: flex;
         position: absolute;
-        top: 0;
+        top: 0.7rem;
         left: 0;
         margin-top: 50px;
         flex-direction: column;
@@ -175,3 +177,57 @@ body {
   }
 }
 /* #endregion Navbar */
+
+/* #region Headers */
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  width: 100%;
+  margin-top: 0.5rem;
+
+  .head-container {
+    /* width: 100%; */
+
+    .search-container {
+      display: flex;
+
+      #search-form{
+        display: flex;
+        align-items: center;
+        max-width: 400px;
+        border: 2px solid black;
+        border-radius: 4px;
+
+        #search-input{
+          outline: none;
+          border-radius: 4px 0 0 4px;
+          min-width: 250px;
+          max-width: 100%;
+          flex: 1;
+          height: 3em;
+          padding: 0 1em;
+          border: none;
+        }
+
+        #search-btn{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          width: 3em;
+          height: 3em;
+          background-color: red;
+          padding: 0;
+          border-radius: 0 2px 2px 0;
+          margin-bottom: 0;
+          border: none;
+          color: white;
+        }
+
+      }
+
+    }
+  }
+
+}

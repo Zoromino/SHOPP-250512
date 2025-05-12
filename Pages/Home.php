@@ -1,5 +1,8 @@
 <?php
-require_once("Components/Navigation.php") ?>
+require_once("Components/Navigation.php");
+require_once("Components/Headers.php");
+
+?>
 
 
 
@@ -18,6 +21,8 @@ require_once("Components/Navigation.php") ?>
 <body>
 
     <?php Navigation() ?>
+
+    <?php Headers() ?>
 
 
 
