@@ -34,7 +34,8 @@ body {
     display: flex;
     gap: 1rem;
     align-self: center;
-    margin-left: -4rem;
+    margin-left: -4.3rem;
+    font-size: 1.3rem;
 
     a {
       color: black;

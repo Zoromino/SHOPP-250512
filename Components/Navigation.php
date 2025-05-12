@@ -4,8 +4,6 @@ require_once("Classes/Database.php");
 
 function Navigation()
 {
-    $dbContext = new Database();
-    $catName = "";
 
     ?>
     <!-- Navbar -->
@@ -29,34 +27,25 @@ function Navigation()
                                 </ul>
                             </li>
                         </ul>
-
-
                     </section>
                 </div>
 
             </div>
-            <!-- <div class="logo-container">
-                <div class="logo"><a href="#!">HELLO</a></div>
-            </div>
-            <div class="icon-container">
-                <div class="user-icon">
-                    <i class="fa-solid fa-user-secret"></i>
-                </div>
-                <div class="cart-icon">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-            </div> -->
         </div>
 
+        <!-- Logan -->
         <div class="logo-container">
             <div class="logo"><a href="#!"></a>CoolGoods</div>
         </div>
+
+        <!-- User/Cart Icon -->
         <div class="icon-container">
             <div class="user-icon">
                 <a href="#!"><i class="fa-solid fa-user-secret"></i></a>
             </div>
             <div class="cart-icon">
-                <a href="#!"><i class="fa-solid fa-cart-shopping"></i></a>
+                <!-- <a href="#!"><i class="fa-solid fa-cart-shopping"></i></a> -->
+                <a href="#!"><i class="fa-solid fa-basket-shopping"></i></a>
             </div>
         </div>
 
