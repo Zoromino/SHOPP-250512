@@ -34,9 +34,32 @@ function Navigation()
                     </section>
                 </div>
 
+            </div>
+            <!-- <div class="logo-container">
+                <div class="logo"><a href="#!">HELLO</a></div>
+            </div>
+            <div class="icon-container">
+                <div class="user-icon">
+                    <i class="fa-solid fa-user-secret"></i>
+                </div>
+                <div class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div> -->
+        </div>
 
+        <div class="logo-container">
+            <div class="logo"><a href="#!">HELLO</a></div>
+        </div>
+        <div class="icon-container">
+            <div class="user-icon">
+                <i class="fa-solid fa-user-secret"></i>
+            </div>
+            <div class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
             </div>
         </div>
+
     </nav>
 
 
