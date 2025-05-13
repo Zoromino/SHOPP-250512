@@ -89,6 +89,11 @@ class Database
         $query->execute(["categoryName" => $catName]);
         return $query->fetchAll(PDO::FETCH_CLASS, "Products");
     }
+    function getAllCategories()
+    {
+        $data = $this->pdo->query('SELECT DISTINCT categoryName FROM Products')->fetchAll(PDO::FETCH_COLUMN);
+        return $data;
+    }
 
     function getPopularProducts()
     {
