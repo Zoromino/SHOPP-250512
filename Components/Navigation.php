@@ -29,11 +29,25 @@ function Navigation()
                                     <?php foreach ($dbContext->getAllCategories() as $catname) {
                                         ?>
 
-                                        <li><a href="#!"></a></li>
+                                        <li><a class="drop-category-item"
+                                                href="/category?catname=<?php echo $catname; ?>"><?php echo $catname; ?></a>
+                                        </li>
 
                                         <?php
                                     }
                                     ?>
+                                    <!-- Search -->
+                                    <div class="search-container">
+                                        <div class="search">
+                                            <form id="search-form" action="/search" method="GET">
+                                                <input type="text" name="" id="search-input"
+                                                    placeholder="Tjoho! Vad söker du idag?" />
+                                                <button type="submit" id="search-btn">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </ul>
                             </li>
                         </ul>

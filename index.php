@@ -11,9 +11,9 @@ $router = new Router();
 $router->addRoute('/', function () {
     require_once(__DIR__ . '/pages/home.php');
 });
-// $router->addRoute('/', function () {
-//     require_once(__DIR__ . '/');
-// });
+$router->addRoute('/category', function () {
+    require_once(__DIR__ . '/pages/categorys/allcategorys.php');
+});
 // $router->addRoute('/', function () {
 //     require_once(__DIR__ . '/');
 // });
