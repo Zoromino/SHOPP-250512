@@ -56,8 +56,15 @@ class Database
         $this->addProductsIfNotExists('Minipussel 150 bitar Thailand', 79, 20, 'Puzzles', "Lägg ett minipussel på 150 bitar med ett fint motiv från Thailand. När det är färdiglagt har det storleken av ett vykort. Bild på motivet ligger i tuben.", "assets/images/puzzles/Minipussel 150 bitar Thailand.png", 0);
 
         // HOME & GARDEN
-        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 49, "Home & Garden", "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/other/Känslomuggar.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 49, "Home & Garden", "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Känslomuggar.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 39, "Home & Garden", "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Grinig&Busig.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 100, "Home & Garden", "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/KänslomuggarStack.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 120, "Home & Garden", "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/KänslomuggarGrupp.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 10, "Home & Garden", "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Munter&Snopen.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 10, "Home & Garden", "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Skojig&Tokig.png", 0);
 
+        // ELECTRONICS
+        $this->addProductsIfNotExists("iPhone 15 - 128 GB", 7990, 5, "Electronics", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Group.png", 0);
 
         // $this->addProductsIfNotExists("", 0, 0, "", "", "", 0);
     }
