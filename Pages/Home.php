@@ -1,6 +1,7 @@
 <?php
 require_once("Components/Navigation.php");
 require_once("Components/Headers.php");
+require_once("Components/HorizontalScroll.php");
 
 ?>
 
@@ -14,8 +15,10 @@ require_once("Components/Headers.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHOPP</title>
 
-    <link rel="stylesheet" href="assets/styles/home.css" />
     <script src="https://kit.fontawesome.com/9cc6379812.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/styles/home.css" />
+    <link rel="stylesheet" href="assets/styles/scroll.css" />
 </head>
 
 <body>
@@ -23,6 +26,8 @@ require_once("Components/Headers.php");
     <?php Navigation() ?>
 
     <?php Headers() ?>
+
+    <?php HorizontalSroll() ?>
 
 
 

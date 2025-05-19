@@ -1,0 +1,19 @@
+.scrollWrapper{
+    max-height: 120px;
+    border: 1px solid black;
+    display: flex;
+    overflow-x: auto;
+
+    .item {
+        min-width: 110px;
+        height: 110px;
+        line-height: 110px;
+        text-align: center;
+        background-color: aqua;
+        margin-right: 4px;
+    }
+}
+
+.scrollWrapper::webkit-scrollbar{
+    width: 0;
+}
