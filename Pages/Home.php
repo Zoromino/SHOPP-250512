@@ -27,7 +27,9 @@ require_once("Components/HorizontalScroll.php");
 
     <?php Headers() ?>
 
-    <?php HorizontalSroll() ?>
+    <?php CatScroll() ?>
+
+    <?php ProdScroll() ?>
 
 
 

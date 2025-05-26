@@ -5,7 +5,7 @@ require_once("Classes/Database.php");
 function Navigation()
 {
     $dbContext = new Database();
-    $catname = $_GET['catname'] ?? "";
+    $catName = $_GET['catName'] ?? "";
 
 
     ?>
@@ -26,11 +26,12 @@ function Navigation()
                         <ul class="drop-menu">
                             <li class="drop-submenu">
                                 <ul class="submenu">
-                                    <?php foreach ($dbContext->getAllCategories() as $catname) {
+                                    <?php foreach ($dbContext->getAllCategories() as $catName) {
                                         ?>
 
-                                        <li><a class="drop-category-item"
-                                                href="/category?catname=<?php echo $catname; ?>"><?php echo $catname; ?></a>
+                                        <li>
+                                            <a class="drop-category-item"
+                                                href="/category?catName=<?php echo $catName; ?>"><?php echo $catName; ?></a>
                                         </li>
 
                                         <?php

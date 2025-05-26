@@ -30,6 +30,11 @@ class Database
         imageUrl VARCHAR(1000),
         popularityFactor INT DEFAULT 0
         )');
+
+        $this->pdo->query('CREATE TABLE IF NOT EXISTS CategoryIcons (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100)
+        )');
     }
 
     function insertProduct($title, $price, $stock, $categoryName, $description, $imageUrl, $popularityFactor)
@@ -130,6 +135,23 @@ class Database
     {
         $query = $this->pdo->query("SELECT * FROM Products WHERE popularityFactor BETWEEN 1 AND 10 ORDER BY popularityFactor ASC LIMIT 10");
         return $query->fetchAll(PDO::FETCH_CLASS, 'Products');
+    }
+
+    function getAllCategoryIcons()
+    {
+        return [
+            'Books' => 'fa-solid fa-book',
+            'Electronics' => 'fa-solid fa-tv',
+            'Puzzles' => 'fa-solid fa-puzzle-piece',
+            'Home & Garden' => 'fa-solid fa-kitchen-set',
+            'Mobiles' => 'fa-solid fa-mobile-screen',
+
+            'default' => 'fa-tag'
+        ];
+    }
+
+    function getUniqueCategoryIcons()
+    {
     }
 }
 
