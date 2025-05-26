@@ -10,6 +10,7 @@ class Products
     public $description;
     public $imageUrl;
     public $popularityFactor;
+    public $pimId;
 }
 
 ?>

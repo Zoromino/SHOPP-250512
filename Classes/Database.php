@@ -28,12 +28,14 @@ class Database
         categoryName VARCHAR(200),
         description VARCHAR(1000),
         imageUrl VARCHAR(1000),
-        popularityFactor INT DEFAULT 0
+        popularityFactor INT DEFAULT 0,
+        pimId VARCHAR(30)
         )');
 
         $this->pdo->query('CREATE TABLE IF NOT EXISTS CategoryIcons (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(100)
+        name VARCHAR(100),
+        pimId VARCHAR(30)        
         )');
     }
 
