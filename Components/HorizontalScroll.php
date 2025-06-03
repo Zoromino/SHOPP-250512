@@ -43,18 +43,18 @@ function CatScroll()
 
     ?>
 
-    <!-- Categroy Scroll -->
+    <!-- Category Scroll -->
     <div class="cat-scrollWrapper" id="cat-scrollWrapper">
-        <?php foreach ($dbContext->getCategoryProducts($catName) as $prod) {
-            $iconClass = $icons[$prod->categoryName] ?? $icons['default'];
+        <?php foreach ($dbContext->getAllCategories() as $prod) {
+            $iconClass = $icons[$prod] ?? $icons['default'];
             ?>
 
             <div class="cat-item">
-                <a href="/category?catName=<?php echo $prod->categoryName; ?>">
+                <a href="/category?catName=<?php echo $prod; ?>">
                     <div class="cat-icon">
                         <i class="fa <?php echo $iconClass; ?>"></i>
                     </div>
-                    <span class="cat-name"><?php echo $prod->categoryName; ?></span>
+                    <span class="cat-name"><?php echo $prod; ?></span>
                 </a>
             </div>
 

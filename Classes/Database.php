@@ -16,6 +16,9 @@ class Database
         $this->pdo = new PDO($dsn, $user, $pass);
         $this->initDatabase();
         $this->initData();
+        // $this->usersDatabase = new UserDatabase($this->pdo);
+        // $this->usersDatabase->setupUsers();
+        // $this->usersDatabase->seedUsers();
     }
 
     function initDatabase()
@@ -32,10 +35,27 @@ class Database
         pimId VARCHAR(30)
         )');
 
+        $this->pdo->query('CREATE TABLE IF NOT EXISTS Category(
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(50),
+        description VARCHAR(300),
+        pimId VARCHAR(30)
+        )');
+
         $this->pdo->query('CREATE TABLE IF NOT EXISTS CategoryIcons (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(100),
         pimId VARCHAR(30)        
+        )');
+
+        $this->pdo->query('CREATE TABLE IF NOT EXISTS CartItem (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        productId INT,
+        quantity INT,
+        addedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        sessionId VARCHAR(50),
+        userId INT NULL,
+        FOREIGN KEY (productId) REFERENCES Products(id) ON DELETE CASCADE
         )');
     }
 
@@ -51,6 +71,8 @@ class Database
         $sql = "SELECT COUNT(*) FROM Products";
         $res = $this->pdo->query($sql);
         $count = $res->fetchColumn();
+
+        $this->addCategoryIfNotExists("Books", "More books");
 
         // BOOKS
         $this->addProductsIfNotExists("Harry Potter och hemligheternas kammare", 329, 100, 'Books', "Sommarlovet är äntligen över! Harry Potter har längtat tillbaka till sitt andra år på Hogwarts skola för häxkonster och trolldom. Men hur ska han stå ut med den omåttligt stroppige professor Lockman? Vad döljer Hagrids förflutna? Och vem är egentligen Missnöjda Myrtle? De verkliga problemen börjar när någon, eller något, förstenar den ena Hogwartseleven efter den andra. Är det Harrys fiende, Draco Malfoy, som ligger bakom? Eller är det den som alla på Hogwarts misstänker, Harry Potter själv?", "/assets/images/books/harry-potter-och-hemligheternas-kammare.jpg", 1);
@@ -131,6 +153,32 @@ class Database
     {
         $data = $this->pdo->query('SELECT DISTINCT categoryName FROM Products')->fetchAll(PDO::FETCH_COLUMN);
         return $data;
+
+        // $query = $this->pdo->query("SELECT * FROM Category");
+        // return $query->fetchAll(PDO::FETCH_CLASS, 'Category');
+    }
+
+    function getCategory($id)
+    {
+        $query = $this->pdo->prepare("SELECT * FROM Category WHERE id = :id");
+        $query->execute(['id' => $id]);
+        $query->setFetchMode(PDO::FETCH_CLASS, 'Category');
+        return $query->fetch();
+    }
+
+    function addCategoryIfNotExists($categoryName, $description)
+    {
+        $query = $this->pdo->prepare("SELECT * FROM Category WHERE name = :name");
+        $query->execute(['name' => $categoryName]);
+        if ($query->rowCount() == 0) {
+            $this->insertCategory($categoryName, $description);
+        }
+    }
+    function insertCategory($categoryName, $description)
+    {
+        $sql = "INSERT INTO Category (name, description) VALUES (:name, :description)";
+        $query = $this->pdo->prepare($sql);
+        $query->execute(['name' => $categoryName, 'description' => $description]);
     }
 
     function getPopularProducts()
