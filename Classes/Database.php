@@ -105,9 +105,9 @@ class Database
         #region ELECTRONICS
         // MOBILES
         $this->addProductsIfNotExists("iPhone 15 - 128 GB - MultiColor", 7990, 0, "Electronics", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Group.png", 0);
-        $this->addProductsIfNotExists("iPhone 15 - 128 GB - Black", 7990, 5, "Electronics", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Black.png", 0);
-        $this->addProductsIfNotExists("iPhone 15 - 128 GB - Black", 7990, 5, "Electronics", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Back_Black.png", 0);
-        $this->addProductsIfNotExists("iPhone 15 - 128 GB - Black", 7990, 5, "Electronics", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Front_Black.png", 0);
+        $this->addProductsIfNotExists("iPhone 15 - 128 GB - Black", 7990, 5, "Mobiles", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Black.png", 0);
+        $this->addProductsIfNotExists("iPhone 15 - 128 GB - Black", 7990, 5, "Mobiles", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Back_Black.png", 0);
+        $this->addProductsIfNotExists("iPhone 15 - 128 GB - Black", 7990, 5, "Mobiles", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Front_Black.png", 0);
         $this->addProductsIfNotExists("iPhone 15 - 128 GB - Blue", 7990, 10, "Electronics", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Blue.png", 0);
         $this->addProductsIfNotExists("iPhone 15 - 128 GB - Blue", 7990, 10, "Electronics", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Back_Blue.png", 0);
         $this->addProductsIfNotExists("iPhone 15 - 128 GB - Blue", 7990, 10, "Electronics", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Front_Blue.png", 0);
@@ -116,9 +116,10 @@ class Database
         $this->addProductsIfNotExists("iPhone 15 - 128 GB - Green", 7990, 15, "Electronics", "iPhone 15 128 GB är ett utmärkt val för användare som söker en kraftfull smartphone med avancerad kamerateknik och lång batteritid, utan att behöva den allra senaste tekniken som finns i iPhone 16-serien. Den erbjuder ett bra balans mellan pris och prestanda.", "assets/images/electronics/mobile/apple/iPhone15_128GB_Back_Green.png", 0);
         #endregion ELECTRONICS
 
-        #region KEYBORDS
-        $this->addProductsIfNotExists("", 0, 0, "", "", "", 0);
-        #endregion KEYBORDS
+        #region SOUNDS
+        $this->addProductsIfNotExists("Sony WF-C510 trådlösa hörlurar med högkvalitativt ljud", 490, 5, "Ljud", "Sony WF-C510 är trådlösa in-ear-hörlurar som erbjuder högkvalitativt ljud i en kompakt och lätt design. Med en vikt på endast 4,6 gram per öronsnäcka är de bland de lättaste Sony någonsin har tillverkat", "assets/images/electronics/sound/headphones/sony_trådlösa_hörlurar.png", 0);
+        // $this->addProductsIfNotExists("", 0, 0, "", "", "", 0);
+        #endregion SOUNDS
 
     }
 
@@ -209,6 +210,7 @@ class Database
             'Puzzles' => 'fa-solid fa-puzzle-piece',
             'Home & Garden' => 'fa-solid fa-kitchen-set',
             'Mobiles' => 'fa-solid fa-mobile-screen',
+            'Ljud' => 'fa-solid fa-headphones-simple',
 
             'default' => 'fa-tag'
         ];
