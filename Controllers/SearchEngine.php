@@ -1,6 +1,6 @@
 <?php
 require_once("vendor/autoload.php");
-require_once("Classes/Products.php");
+require_once("Classes/Product.php");
 require_once("Classes/Database.php");
 
 use GuzzleHttp\Client;
@@ -65,7 +65,6 @@ class SearchEngine
     {
 
         $aa = $query . '*';
-        //        $aa = " and color:silver";
         $query = [
             'query' => [
                 'query_string' => [

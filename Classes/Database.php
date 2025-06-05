@@ -24,7 +24,7 @@ class Database
         $this->pdo = new PDO($dsn, $user, $pass);
         $this->initDatabase();
         $this->initData();
-        // $this->usersDatabase = new UserDatabase($this->pdo);
+        $this->userDatabase = new UserDatabase($this->pdo);
         // $this->usersDatabase->setupUsers();
         // $this->usersDatabase->seedUsers();
     }
@@ -63,7 +63,7 @@ class Database
         addedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         sessionId VARCHAR(50),
         userId INT NULL,
-        FOREIGN KEY (productId) REFERENCES Product(id) ON DELETE CASCADE
+        FOREIGN KEY (productId) REFERENCES Products(id) ON DELETE CASCADE
         )');
     }
 
@@ -150,14 +150,14 @@ class Database
         }
 
         $query = $this->pdo->query("SELECT * FROM Product ORDER BY $sortCol $sortOrder");
-        return $query->fetchAll(PDO::FETCH_CLASS, 'Products');
+        return $query->fetchAll(PDO::FETCH_CLASS, 'Product');
     }
 
     function getProducts($id)
     {
         $query = $this->pdo->prepare("SELECT * FROM Product WHERE id = :id");
         $query->execute(["id" => $id]);
-        $query->setFetchMode(PDO::FETCH_CLASS, 'Products');
+        $query->setFetchMode(PDO::FETCH_CLASS, 'Product');
         return $query->fetch();
     }
 
@@ -172,6 +172,7 @@ class Database
         $query->execute(["categoryName" => $catName]);
         return $query->fetchAll(PDO::FETCH_CLASS, "Product");
     }
+
     function getAllCategories()
     {
         $data = $this->pdo->query('SELECT DISTINCT categoryName FROM Product')->fetchAll(PDO::FETCH_COLUMN);
@@ -197,6 +198,7 @@ class Database
             $this->insertCategory($categoryName, $description);
         }
     }
+
     function insertCategory($categoryName, $description)
     {
         $sql = "INSERT INTO Category (name, description) VALUES (:name, :description)";
