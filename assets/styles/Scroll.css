@@ -56,8 +56,8 @@
     scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
 
     .cat-item {
-        min-width: 110px;
-        height: 50px;
+        min-width: 100px;
+        height: 55px;
         /* line-height: 110px; */
         /* margin-right: 4px; */
         display: flex;
@@ -65,7 +65,7 @@
         overflow: hidden;
         position: relative;
         align-items: center;
-
+        margin-left: -1rem;
 
         a{
             color: black;
@@ -73,6 +73,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            font-size: xx-large;
 
             .cat-name{
                 font-size: 10px;

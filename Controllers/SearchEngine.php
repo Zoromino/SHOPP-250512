@@ -20,6 +20,11 @@ class SearchEngine
 
     function __construct()
     {
+        $this->accessKey = $_ENV['ACCESS_KEY'];
+        $this->secretKeyKey = $_ENV['SECRET_KEY'];
+        $this->url = $_ENV['URL'];
+        $this->index_name = $_ENV['INDEX_NAME'];
+
         $this->client = new Client([
             'base_uri' => $this->url,
             'verify' => false,
@@ -141,7 +146,7 @@ class SearchEngine
             $prod->description = $hit["_source"]["description"];
             $prod->price = $hit["_source"]["price"];
             $prod->categoryName = $hit["_source"]["categoryName"];
-            // $prod->categoryId = $hit["_source"]["categoryId"];
+            $prod->categoryId = $hit["_source"]["categoryId"];
             // $prod->color = $hit["_source"]["color"];
             $prod->stock = $hit["_source"]["color"];
 

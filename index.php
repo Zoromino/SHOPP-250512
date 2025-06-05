@@ -14,6 +14,15 @@ $router->addRoute('/', function () {
 $router->addRoute('/category', function () {
     require_once(__DIR__ . '/pages/categorys/allcategorys.php');
 });
+$router->addRoute('/product', function () {
+    require_once(__DIR__ . '/pages/productdetails.php');
+});
+$router->addRoute('/search', function () {
+    require_once(__DIR__ . '/pages/viewsearch.php');
+});
+// $router->addRoute('/', function () {
+//     require_once(__DIR__ . '/');
+// });
 // $router->addRoute('/', function () {
 //     require_once(__DIR__ . '/');
 // });

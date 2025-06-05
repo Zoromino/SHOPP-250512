@@ -60,7 +60,7 @@ function Navigation()
 
         <!-- Logan -->
         <div class="logo-container">
-            <div class="logo"><a href="#!"></a>CoolGoods</div>
+            <div class="logo"><a href="/">CoolGoods</a></div>
         </div>
 
         <!-- User/Cart Icon -->
