@@ -1,6 +1,6 @@
 <?php
 require_once("Classes/Database.php");
-require_once("Classes/Products.php");
+require_once("Classes/Product.php");
 
 
 function ProdScroll()
