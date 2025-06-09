@@ -4,6 +4,7 @@ require_once("Components/Headers.php");
 require_once("Components/Navigation.php");
 require_once("Components/HorizontalScroll.php");
 require_once("Components/DocHeader.php");
+require_once("Components/SingleProdDetail.php");
 
 $dbContext = new Database();
 
@@ -29,6 +30,8 @@ $pageSize = $_GET[''] ?? "10";
     <?php Headers() ?>
 
     <?php CatScroll() ?>
+
+    <?php SingleProdDetail() ?>
 
 
 

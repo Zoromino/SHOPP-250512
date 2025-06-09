@@ -9,7 +9,16 @@ $dbContext = new Database();
 $userId = null;
 $session_id = null;
 
-$line_items = [];
+// $line_items = [];
+// foreach($cart->getItems() as $cartItem){
+//     array_push($line_items, [
+//         "quantity" => $cartItem->quantity,
+//         "price_data" => [
+//             "currencey" => "sek",
+//             "unit_amount" => $cartitem->
+//         ] 
+//     ])
+// }
 
 
 // $checkout_session = \Strile\Checkout\Session::create([
