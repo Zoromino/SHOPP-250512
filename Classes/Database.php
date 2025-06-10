@@ -26,8 +26,8 @@ class Database
         $this->initDatabase();
         $this->initData();
         $this->userDatabase = new UserDatabase($this->pdo);
-        // $this->usersDatabase->setupUsers();
-        // $this->usersDatabase->seedUsers();
+        $this->userDatabase->setupUsers();
+        $this->userDatabase->seedUsers();
     }
 
     function initDatabase()
@@ -249,6 +249,38 @@ class Database
         $query = $this->pdo->prepare("SELECT * FROM Product WHERE title LIKE :search or categoryName like :search ORDER BY $sortCol $sortOrder");
         $query->execute(["search" => "%$q%"]);
         return $query->fetchAll(PDO::FETCH_CLASS, "Product");
+    }
+
+    function getCartItems($userId, $sessionId)
+    {
+        $query = $this->pdo->prepare("SELECT CartItem.id as id, CartItem.productId, CartItem.quantity, Product.title as productName, Product.price as productPrice, Product.price * CartItem.quantity as rowPrice, Product.imageUrl FROM CartItem JOIN Product ON Product.id=CartItem.productId WHERE userId=:userId or sessionId = :sessionId");
+        $query->execute(['sessionId' => $sessionId, 'userId' => $userId]);
+
+        return $query->fetchAll(PDO::FETCH_CLASS, 'CartItem');
+    }
+
+    function convertSessionToUser($session_id, $userId, $newSessionId)
+    {
+        $query = $this->pdo->prepare("UPDATE CartItem SET userId=:userId, sessionId=:newSessionId WHERE sessionId = :sessionId");
+        $query->execute(['sessionId' => $session_id, 'userId' => $userId, 'newSessionId' => $newSessionId]);
+    }
+
+    function updateCartItem($userId, $sessionId, $productId, $quantity)
+    {
+        if ($quantity <= 0) {
+            $query = $this->pdo->prepare("DELETE FROM CartItem WHERE (userId=:userId or sessionId=:sessionId) AND productId = :productId");
+            $query->execute(['userId' => $userId, 'sessionId' => $sessionId, 'productId' => $productId]);
+            return;
+        }
+        $query = $this->pdo->prepare("SELECT * FROM CartItem  WHERE (userId=:userId or sessionId=:sessionId) AND productId = :productId");
+        $query->execute(['userId' => $userId, 'sessionId' => $sessionId, 'productId' => $productId]);
+        if ($query->rowCount() == 0) {
+            $query = $this->pdo->prepare("INSERT INTO CartItem (productId, quantity, sessionId, userId) VALUES (:productId, :quantity, :sessionId, :userId)");
+            $query->execute(['userId' => $userId, 'sessionId' => $sessionId, 'productId' => $productId, 'quantity' => $quantity]);
+        } else {
+            $query = $this->pdo->prepare("UPDATE CartItem SET quantity = :quantity WHERE (userId=:userId or sessionId=:sessionId) AND productId = :productId");
+            $query->execute(['userId' => $userId, 'sessionId' => $sessionId, 'productId' => $productId, 'quantity' => $quantity]);
+        }
     }
 }
 

@@ -21,7 +21,7 @@ class SearchEngine
     function __construct()
     {
         $this->accessKey = $_ENV['ACCESS_KEY'];
-        $this->secretKeyKey = $_ENV['SECRET_KEY'];
+        $this->secretKey = $_ENV['SECRET_KEY'];
         $this->url = $_ENV['URL'];
         $this->index_name = $_ENV['INDEX_NAME'];
 
@@ -140,15 +140,17 @@ class SearchEngine
         $newarray = [];
         foreach ($searchengineResults as $hit) {
             $prod = new Product();
-            $prod->searchengineid = $hit["_id"];
+            // $prod->searchengineid = $hit["_id"];
             $prod->id = $hit["_source"]["webid"];
             $prod->title = $hit["_source"]["title"];
             $prod->description = $hit["_source"]["description"];
             $prod->price = $hit["_source"]["price"];
             $prod->categoryName = $hit["_source"]["categoryName"];
-            $prod->categoryId = $hit["_source"]["categoryId"];
+            $prod->imageUrl = $hit["_source"]["imageUrl"];
+            $prod->popularityFactor = $hit["_source"]["popularityFactor"];
+            // $prod->categoryId = $hit["_source"]["categoryId"];
             // $prod->color = $hit["_source"]["color"];
-            $prod->stock = $hit["_source"]["color"];
+            $prod->stock = $hit["_source"]["stock"];
 
             array_push($newarray, $prod);
         }

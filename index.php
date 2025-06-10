@@ -20,6 +20,12 @@ $router->addRoute('/product', function () {
 $router->addRoute('/search', function () {
     require_once(__DIR__ . '/pages/viewsearch.php');
 });
+$router->addRoute('/addToCart', function () {
+    require_once(__DIR__ . '/pages/cart/addToCart.php');
+});
+$router->addRoute('/viewCart', function () {
+    require_once(__DIR__ . '/pages/viewCart.php');
+});
 // $router->addRoute('/', function () {
 //     require_once(__DIR__ . '/');
 // });
@@ -29,6 +35,7 @@ $router->addRoute('/search', function () {
 // $router->addRoute('/', function () {
 //     require_once(__DIR__ . '/');
 // });
+
 
 
 
