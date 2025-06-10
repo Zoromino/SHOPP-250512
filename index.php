@@ -24,8 +24,14 @@ $router->addRoute('/addToCart', function () {
     require_once(__DIR__ . '/pages/cart/addToCart.php');
 });
 $router->addRoute('/viewCart', function () {
-    require_once(__DIR__ . '/pages/viewCart.php');
+    require_once(__DIR__ . '/pages/cart/viewCart.php');
 });
+// $router->addRoute('/', function () {
+//     require_once(__DIR__ . '/');
+// });
+// $router->addRoute('/', function () {
+//     require_once(__DIR__ . '/');
+// });
 // $router->addRoute('/', function () {
 //     require_once(__DIR__ . '/');
 // });
