@@ -1,5 +1,7 @@
 <?php
 require_once("Classes/Database.php");
+require_once("Classes/CartItem.php");
+require_once("Classes/Cart.php");
 
 
 function Navigation()
@@ -7,7 +9,15 @@ function Navigation()
     $dbContext = new Database();
     $catName = $_GET['catName'] ?? "";
 
+    $userId = null;
+    $session_id = null;
 
+    if ($dbContext->getUserDatabase()->getAuth()->isLoggedIn()) {
+        $userId = $dbContext->getUserDatabase()->getAuth()->getUserId();
+    }
+
+    $session_id = session_id();
+    $cart = new Cart($dbContext, $session_id, $userId);
     ?>
     <!-- Navbar -->
     <nav class="navbar">
@@ -70,7 +80,10 @@ function Navigation()
             </div>
             <div class="cart-icon">
                 <!-- <a href="#!"><i class="fa-solid fa-cart-shopping"></i></a> -->
-                <a href="/viewCart"><i class="fa-solid fa-basket-shopping"></i></a>
+                <a href="/viewCart">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-count"><?php echo $cart->getItemsCount(); ?></span>
+                </a>
             </div>
         </div>
 

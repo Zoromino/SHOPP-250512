@@ -6,7 +6,7 @@ require_once("Classes/Product.php");
 require_once("Models/UserDatabase.php");
 require_once("Classes/CartItem.php");
 
-// use Stripe\LineItem;
+use Stripe\LineItem;
 
 $dbContext = new Database();
 $userId = null;
@@ -18,7 +18,6 @@ if ($dbContext->getUserDatabase()->getAuth()->isLoggedIn()) {
 //$cart = $dbContext->getCartByUser($userId);
 $session_id = session_id();
 $cart = new Cart($dbContext, $session_id, $userId);
-
 
 \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET']);
 
@@ -35,7 +34,6 @@ foreach ($cart->getItems() as $cartItem) {
         ]
     ]);
 }
-
 
 $checkout_session = \Stripe\Checkout\Session::create([
     "mode" => "payment",

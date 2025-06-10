@@ -40,7 +40,9 @@ function SingleProdDetail()
                         <!-- Prod action -->
                         <div class="prod-card-addToCart">
                             <div class="text-addToCart">
-                                <a class="" href="#!">Lägg i kundvagn</a>
+                                <a class="addToCart-btn"
+                                    href="/addToCart?productId=<?php echo $prod->id; ?>&fromPage=<?php echo urlencode((empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]") ?>">Lägg
+                                    i kundvagn</a>
                             </div>
                         </div>
 

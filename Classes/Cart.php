@@ -15,6 +15,14 @@ class Cart
         $this->cartItems = $this->dbContext->getCartItems($userId, $session_id);
     }
 
+    public function convertSessionToUser($userId, $newSessionId)
+    {
+        $this->dbContext->convertSessionToUser($this->session_id, $userId, $newSessionId);
+
+        $this->userId = $userId;
+        $this->session_id = $newSessionId;
+    }
+
     public function addItem($productId, $quantity)
     {
         $item = $this->getCartItem($productId);
@@ -37,6 +45,19 @@ class Cart
             }
         }
         return null;
+    }
+
+    public function removeItem($productId, $quantity)
+    {
+        $item = $this->getCartItem($productId);
+        if (!$item) {
+            return;
+        }
+        $item->quantity -= $quantity;
+        $this->dbContext->updateCartItem($this->userId, $this->session_id, $productId, $item->quantity);
+        if ($item->quantity <= 0) {
+            array_splice($this->cartItems, array_search($item, $this->cartItems), 1);
+        }
     }
 
     public function getItems()
@@ -64,18 +85,24 @@ class Cart
         return $totalQuantity;
     }
 
-    public function removeItem($productId, $quantity)
+    public function clearCart()
+    {
+        $this->cartItems = [];
+    }
+
+    public function removeCompletely($productId)
     {
         $item = $this->getCartItem($productId);
         if (!$item) {
             return;
         }
-        $item->quantity -= $quantity;
+        $item->quantity = 0;
         $this->dbContext->updateCartItem($this->userId, $this->session_id, $productId, $item->quantity);
         if ($item->quantity <= 0) {
             array_splice($this->cartItems, array_search($item, $this->cartItems), 1);
         }
     }
+
 
 }
 
