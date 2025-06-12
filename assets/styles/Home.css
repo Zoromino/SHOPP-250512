@@ -13,6 +13,7 @@ body {
   display: flex;
   width: 100%;
   /* border-bottom: 3px solid black; */
+  background-color: cornsilk;
 
 
   .logo-container {
@@ -62,7 +63,8 @@ body {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        background-color: white;
+        /* background-color: white; */
+        background-color: cornsilk;
         color: black;
         height: 50px;
         padding: 2rem;
@@ -291,3 +293,57 @@ body {
 
 }
 /* #endregion Headers */
+
+/* #region SingleProd */
+.single-prod-container{
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  border: 1px solid transparent;
+  border-radius: 3.5rem;
+  background-color: cornsilk;
+  
+
+  .single-prod-card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+  }
+  .prod-card-img{
+    max-width: 340px;
+    display: block;
+    height: auto;
+
+    .prod-img{
+      width: 70%;
+      border-radius: 2rem;
+    }
+  }
+  .prod-card-details{
+    display: flex;
+    width: 80%;
+  }
+  .prod-card-addToCart{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: black;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+
+    .addToCart-btn{
+      text-decoration: none;
+      color: white;
+      font-size: larger;
+    }
+
+    &:hover{
+      background-color: #444;
+    }
+  }
+}
+/* #endregion SingleProd */

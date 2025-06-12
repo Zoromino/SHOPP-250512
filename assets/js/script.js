@@ -18,7 +18,9 @@ function addToCart(productId){
         console.log('Product added to cart:', data);
         document.getElementById('cart-count').innerText = data.cartCount
 
-        document.getElementById('cart-total-price').innerText = data.totalPrice
+        if(document.getElementById('cart-total-price')){
+            document.getElementById('cart-total-price').innerText = data.totalPrice
+        }
         // document.getElementById('show-total-price').innerText = data.totalPrice
 
         const quantitySpan = document.getElementById(`quantityDecre${productId}`);

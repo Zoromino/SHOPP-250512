@@ -11,28 +11,28 @@ function SingleSearchDetail($prod)
     // $prod = $dbContext->getProducts($id);
 
     ?>
-    <section class="single_prod-container">
+    <section class="single-prod-container">
         <div class="">
             <div class="">
-                <div class="">
-                    <div class="single_prod-card">
+                <div class="single-prod-list">
+                    <div class="single-prod-card">
                         <!-- Top 10 badge -->
                         <?php if ($prod->popularityFactor > 0) { ?>
                             <div class="prod-card-badge">TOP
                                 <?php echo $prod->popularityFactor; ?>
                             </div><?php } ?>
                         <!-- Prod image -->
-                        <a href="product?id=<?php echo $prod->id; ?>">
-                            <img class="prod-card-img" src="<?php echo $prod->imageUrl; ?>" alt="..." />
+                        <a href="product?id=<?php echo $prod->id; ?>" class="prod-card-img">
+                            <img class="prod-img" src="<?php echo $prod->imageUrl; ?>" alt="..." />
                         </a>
                         <!-- Prod details -->
                         <div class="prod-card-details">
                             <div class="text-details">
                                 <!-- Prod name -->
-                                <h5 class=""><?php echo $prod->title; ?></h5>
+                                <h5 class="prod-name"><?php echo $prod->title; ?></h5>
                                 <hr>
                                 <!-- Prod description -->
-                                <h5 class=""><?php echo $prod->description; ?></h5>
+                                <h5 class="prod-descript"><?php echo $prod->description; ?></h5>
                                 <hr>
                                 <!-- Prod price -->
                                 <?php echo $prod->price; ?>.00 kr
@@ -41,8 +41,7 @@ function SingleSearchDetail($prod)
                         <!-- Prod action -->
                         <div class="prod-card-addToCart">
                             <div class="text-addToCart">
-                                <a class=""
-                                    href="/addToCart?productId=<?php echo $prod->id; ?>&fromPage=<?php echo urlencode((empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]") ?>">Lägg
+                                <a class="addToCart-btn" href="javascript:addToCart(<?php echo $prod->id; ?>)">Lägg
                                     i kundvagn</a>
                             </div>
                         </div>
@@ -53,7 +52,7 @@ function SingleSearchDetail($prod)
         </div>
     </section>
 
-
+    <script src="/assets/js/script.js"></script>
 
     <?php
 }
