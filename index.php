@@ -41,9 +41,17 @@ $router->addRoute('/api/removeCompletely', function () {
 $router->addRoute('/viewSuccess', function () {
     require_once(__DIR__ . '/pages/cart/viewSuccess.php');
 });
+$router->addRoute('/allCategorys', function () {
+    require_once(__DIR__ . '/pages/categorys/allCategorys.php');
+});
+$router->addRoute('/viewSale', function () {
+    require_once(__DIR__ . '/pages/viewSale.php');
+});
 // $router->addRoute('/', function () {
 //     require_once(__DIR__ . '/');
 // });
+
+
 
 
 

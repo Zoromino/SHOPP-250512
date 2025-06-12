@@ -67,7 +67,7 @@
         align-items: center;
         margin-left: -1rem;
 
-        a{
+        .cat-icon-list{
             color: black;
             text-decoration: none;
             display: flex;
