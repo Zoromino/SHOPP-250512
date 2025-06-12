@@ -6,7 +6,7 @@ require_once("Classes/Product.php");
 require_once("Models/UserDatabase.php");
 require_once("Classes/CartItem.php");
 
-use Stripe\LineItem;
+// use Stripe\LineItem;
 
 $dbContext = new Database();
 $userId = null;

@@ -5,6 +5,7 @@ class Cart
     private $dbContext;
     public $session_id;
     public $userId;
+    public $emptyCart;
     public $cartItems = [];
 
     public function __construct($dbContext, $session_id, $userId = null)
@@ -101,6 +102,11 @@ class Cart
         if ($item->quantity <= 0) {
             array_splice($this->cartItems, array_search($item, $this->cartItems), 1);
         }
+    }
+
+    public function emptyCart()
+    {
+        $query = "DELETE FROM cartitem WHERE session_id = :session_id";
     }
 
 

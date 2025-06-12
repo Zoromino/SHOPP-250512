@@ -27,6 +27,6 @@ $dbContext = new Database();
 
 
 
-
+    <script src="/assets/js/script.js"></script>
 
 </body>

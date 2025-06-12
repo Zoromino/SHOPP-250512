@@ -1,9 +1,13 @@
 <?php
+// session_start();
+
+// unset($_SESSION['cart']);
+
 require_once("Components/DocHeader.php");
 require_once("Components/Headers.php");
 require_once("Components/Navigation.php");
 require_once("Components/HorizontalScroll.php");
-require_once("Components/CheckoutView.php");
+
 
 ?>
 
@@ -11,16 +15,18 @@ require_once("Components/CheckoutView.php");
 
 <body>
 
-    <?php Navigation() ?>
-
     <?php Headers() ?>
+
+    <?php Navigation() ?>
 
     <?php CatScroll() ?>
 
-    <?php Checkout() ?>
 
-
-
-    <script src="/assets/js/script.js"></script>
+    <div class="">
+        <div class="">
+            <h1>TACK</h1>
+            <h4>För ditt köp</h4>
+        </div>
+    </div>
 
 </body>

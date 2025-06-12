@@ -45,6 +45,7 @@ function CatScroll()
 
     <!-- Category Scroll -->
     <div class="cat-scrollWrapper" id="cat-scrollWrapper">
+
         <?php foreach ($dbContext->getAllCategories() as $prod) {
             $iconClass = $icons[$prod] ?? $icons['default'];
             ?>
@@ -64,6 +65,11 @@ function CatScroll()
         ?>
     </div>
     <?php
+}
+
+function AllIcons()
+{
+
 }
 
 ?>

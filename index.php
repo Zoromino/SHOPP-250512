@@ -29,15 +29,18 @@ $router->addRoute('/viewCart', function () {
 $router->addRoute('/checkout', function () {
     require_once(__DIR__ . '/pages/cart/checkout.php');
 });
-// $router->addRoute('/', function () {
-//     require_once(__DIR__ . '/');
-// });
-// $router->addRoute('/', function () {
-//     require_once(__DIR__ . '/');
-// });
-// $router->addRoute('/', function () {
-//     require_once(__DIR__ . '/');
-// });
+$router->addRoute('/api/addToCart', function () {
+    require_once(__DIR__ . '/apicode/IncrestItem.php');
+});
+$router->addRoute('/api/removeFromCart', function () {
+    require_once(__DIR__ . '/apicode/DecrestItems.php');
+});
+$router->addRoute('/api/removeCompletely', function () {
+    require_once(__DIR__ . '/apiCode/removeitems.php');
+});
+$router->addRoute('/viewSuccess', function () {
+    require_once(__DIR__ . '/pages/cart/viewSuccess.php');
+});
 // $router->addRoute('/', function () {
 //     require_once(__DIR__ . '/');
 // });

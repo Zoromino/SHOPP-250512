@@ -82,7 +82,7 @@ function Navigation()
                 <!-- <a href="#!"><i class="fa-solid fa-cart-shopping"></i></a> -->
                 <a href="/viewCart">
                     <i class="fa-solid fa-basket-shopping"></i>
-                    <span class="cart-count"><?php echo $cart->getItemsCount(); ?></span>
+                    <span id="cart-count" class="cart-count"><?php echo $cart->getItemsCount(); ?></span>
                 </a>
             </div>
         </div>
