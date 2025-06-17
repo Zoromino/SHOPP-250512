@@ -16,7 +16,8 @@ function addToCart(productId){
         }
     }).then(data => {
         console.log('Product added to cart:', data);
-        document.getElementById('cart-count').innerText = data.cartCount
+        // document.getElementById('cart-count').innerText = data.cartCount
+        updateCartCount(data.cartCount);
 
         if(document.getElementById('cart-total-price')){
             document.getElementById('cart-total-price').innerText = data.totalPrice
@@ -111,3 +112,37 @@ function removeCompletely(productId){
     })
 }
 //#endregion addToCart / removeFromCart / removeCompletely
+
+//#region cart-count
+// göm cart-counten!
+document.addEventListener("DOMContentLoaded", function () {
+    const cartCount = document.getElementById("cart-count");
+    if(cartCount && parseInt(cartCount.textContent) === 0){
+        cartCount.style.display = "none";
+    }
+});
+
+// visa cart-counten!
+function updateCartCount(newCount){
+    const cartCount = document.getElementById("cart-count");
+    if(newCount > 0){
+        cartCount.textContent = newCount;
+        cartCount.style.display = "inline-block";
+    } else {
+        cartCount.style.display = "none";
+    }
+}
+
+// koppla till klick-eventen
+document.querySelectorAll(".addToCart").forEach(addToCartBtn => {
+    addToCartBtn.addEventListener("click", function (){
+        const cartCount = document.getElementById("cart-count");
+        let currentCount = parseInt(cartCount.textContent) || 0;
+
+        let newCount = currentCount + 1;
+
+        updateCartCount(newCount);
+    });
+});
+
+//#endregion cart-count

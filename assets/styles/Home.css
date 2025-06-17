@@ -37,16 +37,38 @@ body {
     display: flex;
     gap: 1rem;
     align-self: center;
-    margin-left: -4.3rem;
-    font-size: 1.3rem;
+    margin-left: -5rem;
+    font-size: 1.6rem;
 
-    a {
+    .viewUser{
       color: black;
 
-      &:hover {
+      &:hover{
         color: gray;
       }
     }
+    
+    .viewCart{
+      position: relative;
+      color: black;
+
+      .cart-count{
+        position: absolute;
+        top: 1rem;
+        right: 0.5rem;
+        color: black;
+        background-color: red;
+        border: 1px solid red;
+        border-radius: 3rem;
+        padding: 2px;
+        font-size: small;
+      }
+
+      &:hover{
+        color: gray;
+      }
+    }
+
   }
 
   .nav-container {
