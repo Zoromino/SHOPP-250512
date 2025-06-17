@@ -6,6 +6,7 @@ require_once("Components/HorizontalScroll.php");
 require_once("Components/DocHeader.php");
 require_once("Components/SingleProdDetail.php");
 require_once("Components/SingleSearchDetail.php");
+require_once("Components/Footer.php");
 
 $dbContext = new Database();
 
@@ -36,6 +37,8 @@ $result = $dbContext->getCategoryProducts($catName, $sortCol, $sortOrder);
     <?php foreach ($result as $prod) {
         SingleSearchDetail($prod);
     } ?>
+
+    <?php Footer() ?>
 
 
 

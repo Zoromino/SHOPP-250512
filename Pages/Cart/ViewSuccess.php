@@ -7,6 +7,7 @@ require_once("Components/DocHeader.php");
 require_once("Components/Headers.php");
 require_once("Components/Navigation.php");
 require_once("Components/HorizontalScroll.php");
+require_once("Components/Footer.php");
 
 
 ?>
@@ -28,5 +29,7 @@ require_once("Components/HorizontalScroll.php");
             <h4>För ditt köp</h4>
         </div>
     </div>
+
+    <?php Footer() ?>
 
 </body>

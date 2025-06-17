@@ -5,6 +5,7 @@ require_once("Components/HorizontalScroll.php");
 require_once("Components/DocHeader.php");
 require_once("Components/SingleProdDetail.php");
 require_once("Components/SingleSearchDetail.php");
+require_once("Components/Footer.php");
 
 ?>
 
@@ -20,7 +21,7 @@ require_once("Components/SingleSearchDetail.php");
 
     <?php CatScroll() ?>
 
-
+    <?php Footer() ?>
 
 
 

@@ -5,6 +5,7 @@ require_once("Components/Navigation.php");
 require_once("Components/HorizontalScroll.php");
 require_once("Components/DocHeader.php");
 require_once("Components/SingleProdDetail.php");
+require_once("Components/Footer.php");
 
 
 
@@ -25,6 +26,7 @@ $dbContext = new Database();
 
     <?php SingleProdDetail() ?>
 
+    <?php Footer() ?>
 
 
     <script src="/assets/js/script.js"></script>

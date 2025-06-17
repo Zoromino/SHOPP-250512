@@ -73,14 +73,15 @@ function Checkout()
                                 </tr>
                                 <?php
                             } ?>
-
                         </tbody>
                     </table>
-                    <div class="cart-total">
-                        Totalt: <span id="cart-total-price"><?php echo $cart->getTotalPrice(); ?>kr</span>
-                    </div>
-                    <div class="cart-checkout">
-                        <a href="/checkout" class="checkout-btn">Till kassan</a>
+                    <div class="viewCartCheckout">
+                        <div class="cart-total">
+                            Totalt: <span id="cart-total-price"><?php echo $cart->getTotalPrice(); ?>kr</span>
+                        </div>
+                        <div class="cart-checkout">
+                            <a href="/checkout" class="cart-checkout-btn">Till kassan</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,6 +6,7 @@ require_once("Components/HorizontalScroll.php");
 require_once("Components/DocHeader.php");
 require_once("Components/SingleProdDetail.php");
 require_once("Components/SingleSearchDetail.php");
+require_once("Components/Footer.php");
 
 $dbContext = new Database();
 
@@ -36,7 +37,7 @@ $result = $searchEngine->search($q, $sortCol, $sortOrder, $pageNo, $pageSize);
         SingleSearchDetail($prod);
     } ?>
 
-
+    <?php Footer() ?>
 
 
 </body>

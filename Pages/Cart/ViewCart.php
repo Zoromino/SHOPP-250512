@@ -4,6 +4,7 @@ require_once("Components/Headers.php");
 require_once("Components/Navigation.php");
 require_once("Components/HorizontalScroll.php");
 require_once("Components/CheckoutView.php");
+require_once("Components/Footer.php");
 
 ?>
 
@@ -19,7 +20,7 @@ require_once("Components/CheckoutView.php");
 
     <?php Checkout() ?>
 
-
+    <?php Footer() ?>
 
     <script src="/assets/js/script.js"></script>
 
