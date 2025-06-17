@@ -113,12 +113,12 @@ class Database
         #endregion PUZZLES
 
         #region HOME & GARDEN
-        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 49, "Hem & Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Känslomuggar.png", 0);
-        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 39, "Hem & Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Grinig&Busig.png", 0);
-        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 100, "Hem & Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/KänslomuggarStack.png", 0);
-        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 120, "Hem & Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/KänslomuggarGrupp.png", 0);
-        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 10, "Hem & Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Munter&Snopen.png", 0);
-        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 10, "Hem & Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Skojig&Tokig.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar i Presentförpackning", 349, 49, "Hem och Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Känslomuggar.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar Grining och Busig", 349, 39, "Hem och Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Grinig&Busig.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar Stack", 349, 100, "Hem och Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/KänslomuggarStack.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar Grupp", 349, 120, "Hem och Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/KänslomuggarGrupp.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar Munter", 349, 10, "Hem och Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Munter&Snopen.png", 0);
+        $this->addProductsIfNotExists("Känslomuggar Skojig och Tokig", 349, 10, "Hem och Trädgård", 3, "Glatt busig eller blängande tjurig? Oavsett hur stämningen är vid frukostbordet är de här stilrena muggarna i presentförpackning perfekta att ge bort till någon med ett växlande morgonhumör!", "assets/images/home&garden/Skojig&Tokig.png", 0);
         #endregion HOME & GARDEN
 
         #region ELECTRONICS
@@ -229,7 +229,7 @@ class Database
             'Böcker' => 'fa-solid fa-book',
             'Elektronik' => 'fa-solid fa-tv',
             'Pussel' => 'fa-solid fa-puzzle-piece',
-            'Hem & Trädgård' => 'fa-solid fa-kitchen-set',
+            'Hem och Trädgård' => 'fa-solid fa-kitchen-set',
             'Mobiler' => 'fa-solid fa-mobile-screen',
             'Ljud' => 'fa-solid fa-headphones-simple',
 

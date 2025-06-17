@@ -24,6 +24,7 @@ require_once("Components/SingleSearchDetail.php");
 
 
 
+
     <script src="/assets/js/script.js"></script>
 
 </body>

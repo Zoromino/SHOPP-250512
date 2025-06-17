@@ -32,6 +32,13 @@ function addToCart(productId){
         if (quantityShow) {
             quantityShow.innerText = data.cart.find(item => item.productId === productId).quantity;
         }
+        const rowPriceSpan = document.getElementById(`total-row-price${productId}`);
+        if (rowPriceSpan) {
+            const item = data.cart.find(item => item.productId === productId);
+            if (item){
+                rowPriceSpan.innerText = item.rowPrice;
+            }
+        }
 
 
     }).catch(error => {
@@ -69,6 +76,13 @@ function removeFromCart(productId){
         const quantityShow = document.getElementById(`quantityDecreShow${productId}`);
         if (quantityShow) {
             quantityShow.innerText = data.cart.find(item => item.productId === productId).quantity;
+        }
+        const rowPriceSpan = document.getElementById(`total-row-price${productId}`);
+        if (rowPriceSpan) {
+            const item = data.cart.find(item => item.productId === productId);
+            if (item){
+                rowPriceSpan.innerText = item.rowPrice;
+            }
         }
 
     }).catch(error => {

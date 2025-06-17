@@ -369,3 +369,37 @@ body {
   }
 }
 /* #endregion SingleProd */
+
+/* #region CheckoutView */
+.cart-checkout-container{
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem;
+
+  .checkout-box{
+    width: 100%;
+    max-width: 1000px;
+
+    .cart-list table {
+      width: 100%;
+      /* border-collapse: collapse; */
+    }
+    .cart-list th,
+    .cart-list td {
+      /* text-align: center; */
+      font-size: 0.8rem;
+    }
+    .cart-img {
+      width: 60px;
+      height: auto;
+    }
+    
+  }
+  /* .cart-list table {
+    width: 100%;
+    border-collapse: collapse;
+  } */
+
+}
+
+/* #endregion CheckoutView */

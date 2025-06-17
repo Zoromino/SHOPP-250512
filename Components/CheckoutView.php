@@ -61,7 +61,8 @@ function Checkout()
                                         <?php echo $item->productPrice; ?>
                                     </td>
                                     <td>
-                                        <span><?php echo $item->rowPrice; ?></span>
+                                        <span
+                                            id="total-row-price<?php echo $item->productId; ?>"><?php echo $item->rowPrice; ?></span>
                                     </td>
                                     <td>
                                         <button class="trash-icon-btn"
