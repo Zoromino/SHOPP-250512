@@ -20,7 +20,6 @@ require_once("Components/SingleSearchDetail.php");
 
     <?php CatScroll() ?>
 
-    <?php ProdScroll() ?>
 
 
 

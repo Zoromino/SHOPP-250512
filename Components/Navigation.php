@@ -60,7 +60,7 @@ function Navigation()
 
                                         <li>
                                             <a class="drop-category-item"
-                                                href="/category?catName=<?php echo $catName; ?>"><?php echo $catName; ?></a>
+                                                href="/singleCategory?catName=<?php echo $catName; ?>"><?php echo $catName; ?></a>
                                         </li>
 
                                         <?php

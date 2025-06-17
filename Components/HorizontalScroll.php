@@ -65,7 +65,7 @@ function CatScroll()
             $iconClass = $icons[$prod] ?? $icons['default'];
             ?>
             <div class="cat-item">
-                <a href="/category?catName=<?php echo $prod; ?>" class="cat-icon-list">
+                <a href="/singleCategory?catName=<?php echo $prod; ?>" class="cat-icon-list">
                     <div class="cat-icon">
                         <i class="fa <?php echo $iconClass; ?>"></i>
                     </div>

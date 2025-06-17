@@ -47,6 +47,12 @@ $router->addRoute('/allCategorys', function () {
 $router->addRoute('/viewSale', function () {
     require_once(__DIR__ . '/pages/viewSale.php');
 });
+$router->addRoute('/singleCategory', function () {
+    require_once(__DIR__ . '/pages/categorys/singleCategorys.php');
+});
+// $router->addRoute('/', function () {
+//     require_once(__DIR__ . '/');
+// });
 // $router->addRoute('/', function () {
 //     require_once(__DIR__ . '/');
 // });

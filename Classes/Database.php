@@ -172,14 +172,14 @@ class Database
         return $query->fetch();
     }
 
-    function getCategoryProducts($catName)
+    function getCategoryProducts($catName, $sortCol, $sortOrder)
     {
         if ($catName == "") {
             $query = $this->pdo->query("SELECT * FROM Product");
             return $query->fetchAll(PDO::FETCH_CLASS, "Product");
         }
 
-        $query = $this->pdo->prepare("SELECT * FROM Product WHERE categoryName = :categoryName");
+        $query = $this->pdo->prepare("SELECT * FROM Product WHERE categoryName = :categoryName ORDER BY $sortCol $sortOrder");
         $query->execute(["categoryName" => $catName]);
         return $query->fetchAll(PDO::FETCH_CLASS, "Product");
     }
