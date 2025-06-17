@@ -14,12 +14,12 @@ function Footer()
                 </div>
                 <div class="foot-icon">
                     <a href="#!" class="foot-brand">
-                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
                     </a>
                 </div>
                 <div class="foot-icon">
                     <a href="#!" class="foot-brand">
-                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-facebook"></i>
                     </a>
                 </div>
             </div>

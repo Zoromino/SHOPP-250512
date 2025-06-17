@@ -399,7 +399,7 @@ body {
     }
     
   }
-  
+
   .viewCartCheckout{
     display: flex;
     justify-content: space-between;
@@ -432,6 +432,23 @@ body {
   color: black;
   text-align: center;
   padding: 1rem;
+
+  .footer-list-icon{
+
+    .foot-list {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      font-size: x-large;
+
+      .foot-icon{
+
+        .foot-brand{
+          color: black;
+        }
+      }
+    }
+  }
 }
 
 /* #endregion Footer */
