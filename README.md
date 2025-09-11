@@ -12,7 +12,7 @@ Fokus har legat på **funktionalitet**, **säkerhet** och **användarvänlig des
 - 🗄️ **Databas**: MySQL
 - 🎨 **Frontend**: HTML, CSS, JavaScript
 - 💳 **Betalning**: Stripe API
-- 🔍 **Sökfunktion**: Integration med extern sökmotor
+- 🔍 **Sökfunktion**: Integration med extern sökmotor -> (https://github.com/Zoromino/SHOPP-250512-SEARCH)
 - 🧠 **Sessionshantering**: PHP Sessions
 - 📱 **Responsivitet**: CSS Media Queries
 - 🧾 **Versionhantering**: Git
