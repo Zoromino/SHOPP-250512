@@ -50,8 +50,10 @@ Trots de tekniska utmaningarna har jag lärt mig mycket om fullstack-webbutveckl
 
 ## 🖼️ Skärmbilder
 
-> ![Startsida](assets/screenshots/shop250512-closemenu.png)  
+> ![Startsida](assets/screenshots/shop250512-closemenu.png)
+
 > ![Menu](assets/screenshots/shop250512.png)
+
 > ![Kundvagn](assets/screenshots/shop250512-cart.png)
 
 ---
