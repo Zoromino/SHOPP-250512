@@ -48,10 +48,8 @@ Trots de tekniska utmaningarna har jag lärt mig mycket om fullstack-webbutveckl
 
 ---
 
-## 🖼️ Skärmbilder _(valfritt)_
+## 🖼️ Skärmbilder
 
-> Lägg gärna till bilder eller GIF:ar här för att visa upp shopen!  
-> Exempel:  
 > ![Startsida](assets/screenshots/shop250512-closemenu.png)  
 > ![Menu](assets/screenshots/shop250512.png)
 > ![Kundvagn](assets/screenshots/shop250512-cart.png)
